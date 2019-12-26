@@ -1,36 +1,3 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Simple Vanilla Router</title>
-    <!-- <script type="module" src="./about.js"></script> -->
-    <script type="module">
-      import { onNavigate, onpopstate } from "./app.js";
-      console.log("hello");
-      onNavigate();
-      // window.onNavigate = onNavigate;
-    </script>
-    <!-- <script src="contact.js"></script>
-    <script src="home.js"></script> -->
-    <!-- <draw-face></draw-face> -->
-    <!-- <audio src="./music.mp3" autoplay loop></audio> -->
-    <script src="./draw-face.js"></script>
-  </head>
-  <body>
-    <ul class="navbar-list">
-      <li class="navbar-item">
-        <a href="#" onclick="onNavigate('/about'); return false;">About</a>
-      </li>
-      <li class="navbar-item">
-        <a href="#" onclick="onNavigate('/'); return false;">Home</a>
-      </li>
-      <!-- <li class="navbar-item">
-        <a href="#" onclick="onNavigate('/contact'); return false;">Contact</a>
-      </li> -->
-    </ul>
-    <div id="root"></div>
-    <script type="module" src="./app.js"></script>
-  </body>
-</html>
+<button onclick="window.onNavigate()">Clicc</button>
+<script type="module" src="./app.js"></script>
