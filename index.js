@@ -11,10 +11,10 @@ router
   .add(/about/, () => {
     document.querySelector("#root").innerHTML = randomPage;
   })
+  // http://127.0.0.1:8080/#/products/12/specification/10
   .add(/products\/(.*)\/specification\/(.*)/, (id, specification) => {
     alert(`products: ${id} specification: ${specification}`);
   })
   .add("", () => {
-    // general controller
-    console.log("welcome in catch all controller");
+    document.querySelector("#root").innerHTML = "";
   });
