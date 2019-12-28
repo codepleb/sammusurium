@@ -32,11 +32,10 @@ class Router {
     return this;
   };
 
-  clearSlashes = path =>
-    path
-      .toString()
-      .replace(/\/$/, "")
-      .replace(/^\//, "");
+  clearSlashes = path => {
+    return path.toString().replace(/\/$/, ""); // Does the end contain a '/'?
+    // .replace(/^\//, ""); // Does the beginning contain a '/'?
+  };
 
   getFragment = () => {
     let fragment = "";
@@ -44,23 +43,24 @@ class Router {
       fragment = this.clearSlashes(
         decodeURI(window.location.pathname + window.location.search)
       );
-      fragment = fragment.replace(/\?(.*)$/, "");
+      fragment = fragment.replace(/\?(.*)$/, ""); // Remove GET parameters from URL
       fragment = this.root !== "/" ? fragment.replace(this.root, "") : fragment;
     } else {
-      const match = window.location.href.match(/#(.*)$/);
+      const match = window.location.href.match(/#(.*)$/); // Does URL contain a hash?
       fragment = match ? match[1] : "";
     }
     return this.clearSlashes(fragment);
   };
 
   navigate = (path = "") => {
+    console.log("path: ", path);
     if (this.mode === "history") {
       window.history.pushState(null, null, this.root + this.clearSlashes(path));
     } else {
       window.location.href = `${window.location.href.replace(
         /#(.*)$/,
         ""
-      )}#${path}`;
+      )}#${path}`; // Remove everything after # and then set the URL with a preceding hash
     }
     return this;
   };
@@ -70,6 +70,7 @@ class Router {
     this.interval = setInterval(this.interval, 50);
   };
 
+  // Listen for path changes
   interval = () => {
     if (this.current === this.getFragment()) return;
     this.current = this.getFragment();
