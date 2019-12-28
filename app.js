@@ -1,13 +1,13 @@
-import about from "./about";
+import random from "./random";
 
-// const routes = {
-//   //   "/": home,
-//   //   "/contact": contact,
-//   "/about": about
-// };
+const routes = {
+  //   "/": home,
+  //   "/contact": contact,
+  "/random": random
+};
 
-// const rootDiv = document.getElementById("root");
-// rootDiv.innerHTML = routes[window.location.pathname];
+const rootDiv = document.getElementById("root");
+rootDiv.innerHTML = routes[window.location.pathname];
 
 // export function onNavigate(pathname) {
 //   console.log("hi");
@@ -19,9 +19,9 @@ import about from "./about";
 //   rootDiv.innerHTML = routes[window.location.pathname];
 // };
 
-function hans() {
-  console.log("hans");
-}
+// function hans() {
+//   console.log("hans");
+// }
 
-window.onNavigate = hans;
-window.onpopstate = onpopstate;
+// window.onNavigate = hans;
+// window.onpopstate = onpopstate;

@@ -3,11 +3,12 @@ class HelloWorld extends HTMLElement {
     super();
     let shadowRoot = this.attachShadow({ mode: "open" });
     shadowRoot.innerHTML = `
-    <ul>
-        <li>home</li>
-        <li>face</li>
-    </ul>
-    `;
+    <nav>
+      <a href="/about">HTML</a> |
+      <a href="/face">CSS</a> |
+    </nav>`;
+    console.log(shadowRoot.innerHTML);
   }
 }
-customElements.define("hello-world", HelloWorld);
+
+customElements.define("nav-bar", HelloWorld);
