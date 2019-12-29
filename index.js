@@ -2,6 +2,7 @@ import Router from "./router.js";
 
 import { randomPage } from "./pages/random.js";
 import { aboutPage } from "./pages/about.js";
+import { loginPage } from "./pages/login.js";
 
 const router = new Router({
   mode: "hash",
@@ -9,11 +10,11 @@ const router = new Router({
 });
 
 router
-  // .add(/\//, () => {
-  //   document.querySelector("#root").innerHTML = "home";
-  // })
   .add("/home", () => {
     document.querySelector("#root").innerHTML = "home";
+  })
+  .add("/login", () => {
+    document.querySelector("#root").innerHTML = loginPage;
   })
   .add("/random", () => {
     document.querySelector("#root").innerHTML = randomPage;
@@ -27,6 +28,9 @@ router
     document.querySelector(
       "#root"
     ).innerHTML = `<p>Example of a route with parameters. ID: ${id}, Spec: ${specification}</p>`;
+  })
+  .add("/", () => {
+    document.querySelector("#root").innerHTML = "This page does exist :)";
   })
   .add("", () => {
     document.querySelector("#root").innerHTML =
