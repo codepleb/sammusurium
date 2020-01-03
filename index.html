@@ -1,5 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css"
+    />
+
+    <style>
+      :root {
+        --animation-time: 2s;
+      }
+      button {
+        border: solid black;
+        animation: flicker var(--animation-time) ease alternate infinite;
+      }
+
+      @keyframes flicker {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
   <body>
     <h1>codepleb</h1>
     <nav>
@@ -8,7 +33,24 @@
       <a href="/#/random">Random</a>
       <a href="/#/about">About</a>
     </nav>
+    <br />
+    <button>hallo</button>
+    <br />
     <div id="root"></div>
     <script type="module" src="./index.js"></script>
+    <script>
+      const red = document.querySelector("button");
+
+      function setProperty(duration) {
+        red.style.setProperty("--animation-time", duration + "s");
+      }
+
+      function changeAnimationTime() {
+        const animationDuration = Math.random();
+        setProperty(animationDuration);
+      }
+
+      setInterval(changeAnimationTime, 1000);
+    </script>
   </body>
 </html>
