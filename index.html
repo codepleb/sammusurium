@@ -1,108 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- <link
-      rel="stylesheet"
-      href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css"
-    /> -->
-
     <style>
-      :root {
-        --random-old-0: 0px;
-        --random-old-1: 0px;
-        --random-old-2: 0px;
-        --random-old-3: 0px;
-        --random-old-4: 0px;
-        --random-old-5: 0px;
-        --random-old-6: 0px;
-        --random-old-7: 0px;
-
-        --random-0: 0px;
-        --random-1: 0px;
-        --random-2: 0px;
-        --random-3: 0px;
-        --random-4: 0px;
-        --random-5: 0px;
-        --random-6: 0px;
-        --random-7: 0px;
-      }
-      button {
-        /* button reset */
-        border: none;
-        margin: 0;
-        padding: 0;
-        width: auto;
-        overflow: visible;
-        background: transparent;
-        color: inherit;
-        font: inherit;
-        line-height: normal;
-
-        /* border: black solid 2px; */
-        padding: 15px;
-      }
-
-      @keyframes flicker {
-        0% {
-          opacity: 0;
-        }
-        100% {
-          opacity: 1;
-        }
-      }
-
-      .animate {
-        border: black solid 2px;
-        animation: animateTextAndBorders 0.02s infinite;
-      }
-
-      @keyframes animateTextAndBorders {
-        0% {
-          border-top-left-radius: var(--old-pos-0) var(--old-pos-1);
-          border-top-right-radius: var(--old-pos-2) var(--old-pos-3);
-          border-bottom-right-radius: var(--old-pos-4) var(--old-pos-5);
-          border-bottom-left-radius: var(--old-pos-6) var(--old-pos-7);
-        }
-        100% {
-          border-top-left-radius: var(--random-0) var(--random-1);
-          border-top-right-radius: var(--random-2) var(--random-3);
-          border-bottom-right-radius: var(--random-4) var(--random-5);
-          border-bottom-left-radius: var(--random-6) var(--random-7);
-        }
+      nav,
+      #root {
+        margin: 10px;
       }
     </style>
   </head>
   <body>
-    <h1>codepleb</h1>
     <nav>
       <cp-button-link href="/#/">Home</cp-button-link>
       <cp-button-link href="/#/login">Login</cp-button-link>
       <cp-button-link href="/#/random">Random</cp-button-link>
       <cp-button-link href="/#/about">About</cp-button-link>
     </nav>
-    <br />
-    <button class="animate">hallo</button>
-    <br />
     <div id="root"></div>
     <script type="module" src="./index.js"></script>
-    <script>
-      const body = document.querySelector("body");
-
-      function setProperty(duration) {
-        for (let i = 0; i < 8; ++i)
-          body.style.setProperty(
-            "--old-pos-" + i,
-            body.style.getPropertyValue("--random-" + i)
-          );
-        for (let i = 0; i < 8; ++i)
-          body.style.setProperty(
-            "--random-" + i,
-            Math.random() * 50 + 10 + "px"
-          );
-      }
-
-      body.addEventListener("animationiteration", setProperty);
-    </script>
     <script src="./components/button-link.js"></script>
   </body>
 </html>
