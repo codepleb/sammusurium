@@ -1,4 +1,6 @@
 class Router {
+  constructor() {}
+
   routes = [];
 
   mode = null;
@@ -53,7 +55,6 @@ class Router {
   };
 
   navigate = (path = "") => {
-    console.log("path: ", path);
     if (this.mode === "history") {
       window.history.pushState(null, null, this.root + this.clearSlashes(path));
     } else {

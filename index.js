@@ -1,13 +1,10 @@
-import Router from "./router.js";
+import Router from "./router2.js";
 
 import { randomPage } from "./pages/random.js";
 import { aboutPage } from "./pages/about.js";
 import { loginPage } from "./pages/login.js";
 
-const router = new Router({
-  mode: "hash",
-  root: "/"
-});
+const router = new Router();
 
 router
   .add("/home", () => {
