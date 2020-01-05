@@ -6,7 +6,14 @@ import { loginPage } from "./pages/login.js";
 
 const router = new Router();
 
+router.defineError(() => {
+  document.querySelector("#root").innerHTML = "404 - This page does not exist!";
+});
+
 router
+  .add("/", () => {
+    document.querySelector("#root").innerHTML = "home";
+  })
   .add("/home", () => {
     document.querySelector("#root").innerHTML = "home";
   })
@@ -25,11 +32,4 @@ router
     document.querySelector(
       "#root"
     ).innerHTML = `<p>Example of a route with parameters. ID: ${id}, Spec: ${specification}</p>`;
-  })
-  .add("/", () => {
-    document.querySelector("#root").innerHTML = "This page does exist :)";
-  })
-  .add("", () => {
-    document.querySelector("#root").innerHTML =
-      "404 - This page does not exist!";
   });

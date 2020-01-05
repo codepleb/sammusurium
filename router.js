@@ -1,5 +1,7 @@
 class Router {
   constructor() {
+    this._error = undefined;
+
     window.onhashchange = ({ newURL }) => {
       const newRoutingUrl = newURL.substring(newURL.indexOf("#") + 1);
       this.navigate(newRoutingUrl);
@@ -13,6 +15,10 @@ class Router {
   }
 
   routes = [];
+
+  defineError = cb => {
+    this._error = cb;
+  };
 
   add = (path, cb) => {
     this.routes.push({ path, cb });
@@ -33,7 +39,7 @@ class Router {
     window.history.pushState(null, null, "/#" + routingUrl);
     const routes = this.routes.filter(r => r.path === routingUrl);
     if (routes && routes[0]) routes[0].cb();
-    return this;
+    else this._error();
   };
 }
 
