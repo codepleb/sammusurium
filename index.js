@@ -1,4 +1,4 @@
-import Router from "./router2.js";
+import Router from "./router.js";
 
 import { randomPage } from "./pages/random.js";
 import { aboutPage } from "./pages/about.js";
