@@ -2,21 +2,16 @@
 <html lang="en">
   <head>
     <style>
-      nav,
+      cp-navbar,
       #root {
         margin: 10px;
       }
     </style>
   </head>
   <body>
-    <nav>
-      <cp-button-link href="/#/">Home</cp-button-link>
-      <cp-button-link href="/#/login">Login</cp-button-link>
-      <cp-button-link href="/#/random">Random</cp-button-link>
-      <cp-button-link href="/#/about">About</cp-button-link>
-    </nav>
+    <cp-navbar></cp-navbar>
     <div id="root"></div>
     <script type="module" src="./index.js"></script>
-    <script src="./components/button-link.js"></script>
+    <script type="module" src="./components/navbar.js"></script>
   </body>
 </html>
