@@ -22,7 +22,7 @@ class ButtonLink extends HTMLElement {
         this.style.getPropertyValue("--random-" + i)
       );
     for (let i = 0; i < 8; ++i)
-      this.style.setProperty("--random-" + i, Math.random() * 50 + 10 + "px");
+      this.style.setProperty("--random-" + i, Math.random() * 50 + 15 + "px");
   };
 
   connectedCallback() {
