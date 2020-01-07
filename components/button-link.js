@@ -39,14 +39,14 @@ class ButtonLink extends HTMLElement {
             --random-old-6: 0px;
             --random-old-7: 0px;
     
-            --random-0: 0px;
-            --random-1: 0px;
-            --random-2: 0px;
-            --random-3: 0px;
-            --random-4: 0px;
-            --random-5: 0px;
-            --random-6: 0px;
-            --random-7: 0px;
+            --random-0: 35px;
+            --random-1: 35px;
+            --random-2: 35px;
+            --random-3: 35px;
+            --random-4: 35px;
+            --random-5: 35px;
+            --random-6: 35px;
+            --random-7: 35px;
         }
         
         a {
@@ -86,6 +86,7 @@ class ButtonLink extends HTMLElement {
     </a>
 `;
 
+    this.randomizeValues();
     this.shadowRoot
       .querySelector("a")
       .addEventListener("animationiteration", this.randomizeValues);
