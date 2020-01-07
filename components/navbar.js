@@ -3,6 +3,7 @@ import "./button-link.js";
 class Navbar extends HTMLElement {
   constructor() {
     super();
+    this._menuOpen = false;
   }
 
   connectedCallback() {
@@ -13,11 +14,15 @@ class Navbar extends HTMLElement {
             button {
                 display: none;
             }
-        }
- 
-        @media (max-width: 576px) {
+          }
+          
+          @media (max-width: 576px) {
             nav {
-                display: none;
+              display: none;
+            }
+
+            nav.open {
+              display: block;
             }
         }
     </style>
@@ -27,8 +32,16 @@ class Navbar extends HTMLElement {
         <cp-button-link href="/#/random">Random</cp-button-link>
         <cp-button-link href="/#/about">About</cp-button-link>
     </nav>
-    <button id="">+</button>
+    <button id="menu-opener">+</button>
   `;
+
+    const button = this.shadowRoot.querySelector("#menu-opener");
+    button.addEventListener("click", () => {
+      console.log("clicc");
+      this._menuOpen = !this._menuOpen;
+      const navClasses = this.shadowRoot.querySelector("nav").classList;
+      this._menuOpen ? navClasses.add("open") : navClasses.remove("open");
+    });
   }
 }
 
