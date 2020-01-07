@@ -3,14 +3,21 @@ class Router {
     this._error = undefined;
 
     window.onhashchange = ({ newURL }) => {
-      const newRoutingUrl = newURL.substring(newURL.indexOf("#") + 1);
-      this.navigate(newRoutingUrl);
+      const fragment =
+        newURL.indexOf("#") === -1
+          ? "/"
+          : newURL.substring(newURL.indexOf("#") + 1);
+      this.navigate(fragment);
     };
     // If the user routes to a specific URL from the beginning, it should load the appropriate page.
     setTimeout(() => {
-      this.navigate(
-        window.location.href.substring(window.location.href.indexOf("#") + 1)
-      );
+      const fragment =
+        window.location.href.indexOf("#") === -1
+          ? "/"
+          : window.location.href.substring(
+              window.location.href.indexOf("#") + 1
+            );
+      this.navigate(fragment);
     });
   }
 
