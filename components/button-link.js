@@ -26,6 +26,10 @@ class ButtonLink extends HTMLElement {
   };
 
   connectedCallback() {
+    const style = {
+      backgroundColorHover: "#3344FF"
+    };
+
     let shadow = this.attachShadow({ mode: "open" });
     shadow.innerHTML = `
     <style>
@@ -59,6 +63,17 @@ class ButtonLink extends HTMLElement {
 
             border: black solid 2px;
             animation: animateTextAndBorders 0.1s infinite;
+
+            background-color: #fff;
+            transition: background-color 0.5s ease;
+        }
+
+        a:hover {
+          background-color: ${style.backgroundColorHover};
+        }
+
+        a:active {
+          background-color: ${style.backgroundColorHover};
         }
 
         a:visited {
