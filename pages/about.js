@@ -1,4 +1,11 @@
 export const aboutPage = `
+<style>
+    section {
+        /* Break long crypto addresses */
+        word-break: break-all;
+    }
+</style>
+
 <h2>I'm a software engineer</h2>
 
 <p>I work on several projects, all of them being my own. I started as backend developer (all-inclusive java) and went to frontend technologies as soon as I realized that this really is my passion.</p>
