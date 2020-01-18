@@ -26,6 +26,22 @@ class Image extends HTMLElement {
   };
 
   connectedCallback() {
+    const borderAnimationStyle = `
+      @keyframes animateTextAndBorders {
+        0% {
+            border-top-left-radius: var(--old-pos-0) var(--old-pos-1);
+            border-top-right-radius: var(--old-pos-2) var(--old-pos-3);
+            border-bottom-right-radius: var(--old-pos-4) var(--old-pos-5);
+            border-bottom-left-radius: var(--old-pos-6) var(--old-pos-7);
+        }
+        100% {
+            border-top-left-radius: var(--random-0) var(--random-1);
+            border-top-right-radius: var(--random-2) var(--random-3);
+            border-bottom-right-radius: var(--random-4) var(--random-5);
+            border-bottom-left-radius: var(--random-6) var(--random-7);
+        }
+      }
+    `;
     let shadow = this.attachShadow({ mode: "open" });
     shadow.innerHTML = `
     <style>
@@ -57,20 +73,7 @@ class Image extends HTMLElement {
           animation: animateTextAndBorders 0.15s infinite;
       }
 
-      @keyframes animateTextAndBorders {
-        0% {
-            border-top-left-radius: var(--old-pos-0) var(--old-pos-1);
-            border-top-right-radius: var(--old-pos-2) var(--old-pos-3);
-            border-bottom-right-radius: var(--old-pos-4) var(--old-pos-5);
-            border-bottom-left-radius: var(--old-pos-6) var(--old-pos-7);
-        }
-        100% {
-            border-top-left-radius: var(--random-0) var(--random-1);
-            border-top-right-radius: var(--random-2) var(--random-3);
-            border-bottom-right-radius: var(--random-4) var(--random-5);
-            border-bottom-left-radius: var(--random-6) var(--random-7);
-        }
-      }
+      ${borderAnimationStyle}
     </style>
 
     <img src="${this.src}">
