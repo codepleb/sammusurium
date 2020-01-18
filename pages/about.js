@@ -1,4 +1,13 @@
 export const aboutPage = `
+<h2>I'm a software engineer</h2>
+
+<p>I work on several projects, all of them being my own. I started as backend developer (all-inclusive java) and went to frontend technologies as soon as I realized that this really is my passion.</p>
+<p>Nowadays I do everything, but mostly with the frontend stack.</p>
+
+<p><strong>Keywords I love:</strong> Javascript, Nodejs, Bash Scripts, Linux, Cryptocurrency, Custom Elements, HTML, CSS, Animations, ExpressJs, REST, Git, Hyper, MacOS, Chrome, Minecraft</p>
+
+<p>Find my Github here: <a href="https://github.com/codepleb">https://github.com/codepleb</a></p>
+
 <h2>If you like what I do, feel free to support me:</h2>
 <section>
     <p><strong>IOTA:</strong> IZ99FQWJUQJCDLBSUOEDZIVROSARFYLXJWPZNAXQPCCGAHCUWKRE9RNHMGNHZTAIZHPUDV9HMSPNJLYSXPNEPTRHUW</p>
