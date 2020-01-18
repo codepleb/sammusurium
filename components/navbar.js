@@ -10,36 +10,62 @@ class Navbar extends HTMLElement {
     let shadow = this.attachShadow({ mode: "open" });
     shadow.innerHTML = `
     <style>
-        @media (min-width: 576px) {
-            button {
-                display: none;
-            }
-          }
-          
-          @media (max-width: 576px) {
-            nav {
-              display: none;
-            }
+      .menu-container {
+        position: fixed;
+        bottom: 50px;
+      }
 
-            nav.open {
-              display: block;
-            }
+      nav {
+        position: relative;
+        left: -50px;
+        bottom: 25px;
+        width: 100px;
+      }
+
+      @media (min-width: 576px) {
+        button {
+            display: none;
         }
+
+        .menu-container {
+          position: static;
+          bottom: 0;
+        }
+  
+        nav {
+          position: static;
+          left: 0;
+          bottom: 0;
+          width: 100%;
+        }
+      }
+        
+      @media (max-width: 576px) {
+        nav {
+          display: none;
+        }
+
+        nav.open {
+          display: block;
+        }
+      }
     </style>
-    <nav>
-        <cp-button-link href="/#/">Home</cp-button-link>
-        <cp-button-link href="/#/login">Login</cp-button-link>
-        <cp-button-link href="/#/random">Random</cp-button-link>
-        <cp-button-link href="/#/about">About</cp-button-link>
-    </nav>
-    <button id="menu-opener">+</button>
+    <div class="menu-container">
+      <nav>
+          <cp-button-link href="/#/">Home</cp-button-link>
+          <cp-button-link href="/#/login">Login</cp-button-link>
+          <cp-button-link href="/#/random">Random</cp-button-link>
+          <cp-button-link href="/#/about">About</cp-button-link>
+      </nav>
+      <button id="menu-opener">+</button>
+    </div>
   `;
 
     const button = this.shadowRoot.querySelector("#menu-opener");
     button.addEventListener("click", () => {
-      console.log("clicc");
       this._menuOpen = !this._menuOpen;
       const navClasses = this.shadowRoot.querySelector("nav").classList;
+      button.innerText = this._menuOpen ? "-" : "+";
       this._menuOpen ? navClasses.add("open") : navClasses.remove("open");
     });
   }
