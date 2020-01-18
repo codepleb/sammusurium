@@ -54,7 +54,6 @@ class ButtonLink extends HTMLElement {
         }
         
         a {
-            font-family: Courier;
             font-size: 16px;
             display: inline-block;
             padding: 15px;
