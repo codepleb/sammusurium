@@ -2,11 +2,16 @@ export const homePage = `
 <style>
     .content {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
+        align-items: center;
     }
 
     .text {
         align-self: center;
+    }
+
+    @media (min-width: 766px) {
+        flex-direction: row;
     }
 </style>
 
