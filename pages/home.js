@@ -20,6 +20,8 @@ export const homePage = `
 <div class="content">
     <cp-image src="/assets/codepleb.png"></cp-image>
     <div class="text">
+        <p>Great minds discuss ideas, average minds discuss events, small minds discuss people.</p>
+
         <p>This is just a webpage. Several things I tried and tested just randomly appear here.</p>
         <p>No frameworks and libraries are being used, everything you see here are core web technologies.</p>
     </div>
